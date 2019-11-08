@@ -1,0 +1,1 @@
+Place your local fonts in this folder. When building the styleguide they will be copied to the dist folder.

@@ -1,0 +1,8 @@
+name: Your styleguide
+
+assets:
+  - ./dist
+
+examples:
+  css:
+  - dist/styles.css
