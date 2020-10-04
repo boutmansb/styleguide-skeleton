@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var cleanCss = require('gulp-clean-css');
 var connect = require('gulp-connect');
 
@@ -22,7 +21,6 @@ gulp.task('sass', function () {
   return gulp
     .src(['./sass/styles.scss'])
     .pipe(sass())
-    .pipe(autoprefixer())
     .pipe(cleanCss())
     .pipe(gulp.dest('./dist'));
 });
