@@ -7,7 +7,7 @@ var connect = require('gulp-connect');
 
 // This is used when editing template styles.
 // It has to completely rebuild the style guide, note that this takes about 5s.
-gulp.task('force-styleguide',
+gulp.task('build-styleguide',
   shell.task('"./node_modules/.bin/stylemark" -i "./sass" -o "./styleguide" -c "./default.stylemark.yml"')
 );
 
@@ -52,12 +52,12 @@ gulp.task('server', async function () {
 
 // Watches files and auto-refreshes when changes are saved
 gulp.task('watch', async function () {
-  gulp.watch(['./sass/**/*.scss', './sass/**/*.md'], gulp.series('sass', 'force-styleguide', 'reload-styleguide'));
+  gulp.watch(['./sass/**/*.scss', './sass/**/*.md'], gulp.series('sass', 'build-styleguide', 'reload-styleguide'));
 });
 
-gulp.task('dev', gulp.series('sass', 'copy-images', 'copy-fonts', 'force-styleguide', 'server', 'watch'));
+gulp.task('dev', gulp.series('sass', 'copy-images', 'copy-fonts', 'build-styleguide', 'server', 'watch'));
 
-gulp.task('generate-styleguide', gulp.series('sass', 'copy-images', 'copy-fonts', 'force-styleguide'));
+gulp.task('generate-styleguide', gulp.series('sass', 'copy-images', 'copy-fonts', 'build-styleguide'));
 
 // Only compiles the sass to the dist folder
-gulp.task('build', gulp.series('sass', 'copy-images', 'copy-fonts'));
+gulp.task('dist', gulp.series('sass', 'copy-images', 'copy-fonts'));
