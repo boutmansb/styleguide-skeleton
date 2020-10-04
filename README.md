@@ -11,10 +11,10 @@ This is a basic skeleton for quickly creating a styleguide.
 To start the styleguide just run `gulp dev`. This will compile the styleguide and start a local server on `http://localhost:8090`.
 
 ### Build
-If you only want to compile/build the css you can run `gulp build`. This will only compile all of the sass and copies the images to the dist folder without starting the local server and generating the styleguide.
+If you only want to compile/build the css you can run `gulp dist`. This will only compile all of the sass and copies the images to the dist folder without starting the local server and generating the styleguide.
 
 ### Basic structure
-After you `npm install` and run `gulp dev` for the first time, you'll have a folder structure like this.
+After you run `npm install` and `gulp dev` for the first time, you'll have a folder structure like this.
 - **root**
 	- node_modules
 	- **dist** - where your compiled and autoprefixed styles will go.
