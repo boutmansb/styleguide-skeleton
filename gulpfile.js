@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var shell = require('gulp-shell');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifyCss = require('gulp-minify-css');
+var cleanCss = require('gulp-clean-css');
 var connect = require('gulp-connect');
 
 // This is used when editing template styles.
@@ -23,7 +23,7 @@ gulp.task('sass', function () {
     .src(['./sass/styles.scss'])
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(minifyCss())
+    .pipe(cleanCss())
     .pipe(gulp.dest('./dist'));
 });
 
